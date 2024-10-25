@@ -6,6 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>bitrixGen</ToolCommandName>
         <PackageId>$(AssemblyName)</PackageId>
         <Version>0.0.0</Version>
         <Authors>Kiruyuto</Authors>
@@ -15,6 +17,7 @@
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
@@ -39,6 +42,10 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>
