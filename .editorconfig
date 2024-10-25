@@ -1,0 +1,104 @@
+# editorconfig.org
+root = true
+
+[*]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = false
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.json]
+indent_size = 2
+indent_style = space
+
+# CSharp files
+# https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/?view=vs-2022
+[*.cs]
+charset = utf-8
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# Microsoft .NET properties
+csharp_style_namespace_declarations = file_scoped
+csharp_prefer_braces = when_multiline
+csharp_style_expression_bodied_constructors = when_on_single_line
+csharp_style_expression_bodied_methods = when_on_single_line
+csharp_style_expression_bodied_operators = when_on_single_line
+csharp_style_var_for_built_in_types = true
+csharp_style_var_when_type_is_apparent = true
+csharp_style_expression_bodied_lambdas = true
+csharp_style_prefer_index_operator = true
+csharp_style_prefer_range_operator = true
+csharp_using_directive_placement = outside_namespace
+csharp_style_prefer_switch_expression = true
+csharp_style_prefer_top_level_statements = true
+csharp_style_prefer_method_group_conversion = true
+csharp_style_prefer_primary_constructors = true
+
+dotnet_style_coalesce_expression = true
+dotnet_style_explicit_tuple_names = true
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity
+dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity
+dotnet_style_parentheses_in_other_operators = never_if_unnecessary
+dotnet_style_prefer_compound_assignment = true
+dotnet_style_prefer_collection_expression = true
+dotnet_diagnostic.CA2254.severity = none # https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2254
+dotnet_diagnostic.CA2208.severity = none # https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2208
+dotnet_diagnostic.CA1822.severity = warning # https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
+dotnet_sort_system_directives_first = true
+
+# ReSharper properties
+resharper_redundant_empty_object_creation_argument_list_highlighting = warning
+resharper_csharp_max_line_length = 240
+# resharper_inconsistent_naming_highlighting = none
+resharper_template_is_not_compile_time_constant_problem_highlighting = error
+resharper_entity_framework_model_validation_circular_dependency_highlighting = error
+resharper_arrange_object_creation_when_type_evident_highlighting = error
+resharper_class_never_instantiated_global_highlighting = none
+resharper_auto_property_can_be_made_get_only_global_highlighting = none
+resharper_redundant_using_directive_highlighting = error
+
+# Meziantou
+dotnet_diagnostic.MA0010.severity = none
+dotnet_diagnostic.MA0097.severity = none
+dotnet_diagnostic.MA0047.severity = none
+dotnet_diagnostic.MA0013.severity = none
+dotnet_diagnostic.MA0072.severity = none
+dotnet_diagnostic.MA0086.severity = none
+dotnet_diagnostic.MA0095.severity = none
+dotnet_diagnostic.MA0011.severity = none
+dotnet_diagnostic.MA0001.severity = none
+dotnet_diagnostic.MA0057.severity = none
+dotnet_diagnostic.MA0058.severity = none
+dotnet_diagnostic.MA0059.severity = none
+dotnet_diagnostic.MA0049.severity = none
+dotnet_diagnostic.MA0005.severity = none
+dotnet_diagnostic.MA0020.severity = none
+dotnet_diagnostic.MA0028.severity = none
+dotnet_diagnostic.MA0027.severity = none
+dotnet_diagnostic.MA0012.severity = none
+dotnet_diagnostic.MA0014.severity = none
+dotnet_diagnostic.MA0015.severity = none
+dotnet_diagnostic.MA0069.severity = none
+dotnet_diagnostic.MA0056.severity = none
+dotnet_diagnostic.MA0062.severity = none
+dotnet_diagnostic.MA0082.severity = none
+dotnet_diagnostic.MA0039.severity = none
+dotnet_diagnostic.MA0017.severity = none
+dotnet_diagnostic.MA0087.severity = none
+dotnet_diagnostic.MA0007.severity = none
+dotnet_diagnostic.MA0048.severity = none
+dotnet_diagnostic.MA0004.severity = none
+dotnet_diagnostic.MA0016.severity = none
+dotnet_diagnostic.MA0038.severity = none # Deprecated. Results in shitton of errors w/ primary constructors. DO NOT USE.
+
+# Roslynator
+roslynator_refactorings.enabled = true
+roslynator_compiler_diagnostic_fixes.enabled = true
