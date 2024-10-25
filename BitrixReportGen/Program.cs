@@ -35,9 +35,7 @@ internal static class Program
             if (taskData.ResultProperty == default) throw new Exception($"[TaskId: {task}] Failed to get task data!");
 
             var taskTimespan = TimeSpan.FromSeconds(total);
-            var title = $"[{taskData.ResultProperty.Task.Title}]";
-            var group = (taskData.ResultProperty.Task.Group != null ? $"[{taskData.ResultProperty.Task.Group.Name}]" : "");
-            tasksToReport.Add(group, string.Create(CultureInfo.InvariantCulture, $"{title}{group} Total time spent today: {taskTimespan.Hours}h {taskTimespan.Minutes}m {taskTimespan.Seconds}s"));
+            tasksToReport.Add(taskData.ResultProperty.Task.Group != null ? $"[{taskData.ResultProperty.Task.Group.Name}]" : "[No project]", string.Create(CultureInfo.InvariantCulture, $"[{taskData.ResultProperty.Task.Title}] Total time spent today: {taskTimespan.Hours}h {taskTimespan.Minutes}m {taskTimespan.Seconds}s"));
         }
 
         Console.WriteLine("Tasks to report:");
