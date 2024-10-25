@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using BitrixReportGen.API.Bitrix.Models;
 using RestSharp;
 

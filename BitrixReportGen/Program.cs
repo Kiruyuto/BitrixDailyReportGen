@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
 using BitrixReportGen.API.Bitrix;
@@ -60,7 +60,9 @@ internal static class Program
         {
             StartInfo = new ProcessStartInfo
             {
-                RedirectStandardInput = true, FileName = "clip", UseShellExecute = false
+                RedirectStandardInput = true,
+                FileName = "clip",
+                UseShellExecute = false
             }
         };
 

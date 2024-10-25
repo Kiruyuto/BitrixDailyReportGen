@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace BitrixReportGen.API.Bitrix.Models;
 
@@ -35,8 +35,6 @@ public class GetTaskById : DefaultResponse<GetTaskById.Result>
         [JsonPropertyName("icon")] public string? Icon { get; set; }
         [JsonPropertyName("workPosition")] public string? WorkPosition { get; set; }
     }
-
-
 
     public class Task
     {
