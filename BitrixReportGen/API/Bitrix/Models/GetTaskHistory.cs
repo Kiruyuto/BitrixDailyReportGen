@@ -21,9 +21,6 @@ public class GetTaskHistory : DefaultResponse<GetTaskHistory.Result>
         [JsonPropertyName("user")] public User? User { get; set; }
     }
 
-    /// <summary>
-    /// Q
-    /// </summary>
     public class User
     {
         [JsonPropertyName("id")] public string Id { get; set; } = default!;

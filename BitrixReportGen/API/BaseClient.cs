@@ -17,9 +17,7 @@ public abstract class BaseClient(RestClient client)
         if (string.IsNullOrWhiteSpace(res.Content))
             throw new Exception($"[{request.Resource} => Status: {res.StatusCode}] Received empty response!");
 
-        var model = JsonSerializer.Deserialize<T>(res.Content, _options);
-        if (model == null) throw new Exception($"Failed to deserialize [{request.Resource}] response!");
-
+        var model = JsonSerializer.Deserialize<T>(res.Content, _options) ?? throw new Exception($"Failed to deserialize [{request.Resource}] response!");
         return model;
     }
 }
