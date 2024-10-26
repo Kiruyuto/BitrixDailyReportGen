@@ -15,3 +15,20 @@
     ```
     bitrixGen
     ```
+   
+<details>
+<summary>Example of generated content</summary>
+
+```text
+# Daily report for 26.10.2024, created at 13:51:48 #
+
+### [Project #1] => 0h 1m 1s ###
+- ExampleTask_1 => 0h 1m 0s
+- ExampleTask_2 => 0h 0m 1s
+
+Total time spent today across all projects: [0h 1m 1s]
+
+
+```
+
+</details>
