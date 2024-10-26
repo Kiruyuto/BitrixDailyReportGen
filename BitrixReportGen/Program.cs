@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
+using System.Text;
 using BitrixReportGen.API.Bitrix;
 
 namespace BitrixReportGen;
@@ -15,7 +16,7 @@ internal static class Program
 
         var taskList = await bitrixClient.GetTaskList();
 
-        var tasksToReport = new Hashtable();
+        var tasksData = new HashSet<TaskData>();
         foreach (var task in taskList.TaskIds)
         {
             var taskHistory = await bitrixClient.GetTaskHistory(task.ToString()!);
@@ -34,52 +35,34 @@ internal static class Program
             var taskData = await bitrixClient.GetTaskById(task.ToString()!);
             if (taskData.ResultProperty == default) throw new Exception($"[TaskId: {task}] Failed to get task data!");
 
-            var taskTimespan = TimeSpan.FromSeconds(total);
-            tasksToReport.Add(taskData.ResultProperty.Task.Group != null ? $"[{taskData.ResultProperty.Task.Group.Name}]" : "[No project]", string.Create(CultureInfo.InvariantCulture, $"[{taskData.ResultProperty.Task.Title}] Total time spent today: {taskTimespan.Hours}h {taskTimespan.Minutes}m {taskTimespan.Seconds}s"));
+            tasksData.Add(new TaskData
+            {
+                Project = taskData.ResultProperty.Task.Group != null ? $"{taskData.ResultProperty.Task.Group.Name}" : "No project",
+                TaskTitle = $"{taskData.ResultProperty.Task.Title}",
+                SecondsSpent = total
+            });
+        }
+
+        Console.WriteLine($"Found {tasksData.Count} tasks for today");
+
+        var tasksByProject = tasksData.GroupBy(x => x.Project, StringComparer.OrdinalIgnoreCase).ToList();
+
+        var stringBuilder = new StringBuilder();
+        foreach (var projectTasks in tasksByProject)
+        {
+            stringBuilder.AppendLine($"### [{projectTasks.Key}] => {projectTasks.Sum(x => x.TimeSpent.Hours)}h {projectTasks.Sum(x => x.TimeSpent.Minutes)}m ###");
+            foreach (var task in projectTasks)
+                stringBuilder.AppendLine($"- {task.TaskTitle} => {task.TimeSpent.Hours}h {task.TimeSpent.Minutes}m {task.TimeSpent.Seconds}s");
         }
 
         Console.WriteLine("Tasks to report:");
-        foreach (var s in tasksToReport) Console.WriteLine(s);
+        foreach (var s in tasksData) Console.WriteLine(s);
 
-        var strToClipboard = string.Join('\n', tasksToReport);
-        var isCopied = SetClipboard(strToClipboard);
+        var strToClipboard = stringBuilder.ToString();
+        var isCopied = await ClipboardManager.SetClipboard(strToClipboard);
 
         Console.WriteLine(isCopied ? "Successfully copied to clipboard! Use Ctrl+V to paste it." : "Failed to copy to clipboard! Most likely you are not on Windows.");
     }
 
-    private static bool SetClipboard(string value)
-    {
-        if (!OperatingSystem.IsWindows())
-            return false;
 
-        ArgumentNullException.ThrowIfNull(value);
-
-        var clipboardExecutable = new Process
-        {
-            StartInfo = new ProcessStartInfo
-            {
-                RedirectStandardInput = true,
-                FileName = "clip",
-                UseShellExecute = false
-            }
-        };
-
-        clipboardExecutable.Start();
-
-        try
-        {
-            clipboardExecutable.StandardInput.Write(value); // CLIP uses STDIN as input.
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Failed to copy to clipboard! Exception: {ex}");
-            return false;
-        }
-        finally
-        {
-            clipboardExecutable.StandardInput.Close();
-        }
-
-        return true;
-    }
 }
