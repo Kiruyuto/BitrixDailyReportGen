@@ -41,7 +41,7 @@ internal static class Program
             });
         }
 
-        Console.WriteLine(string.Create(CultureInfo.InvariantCulture, $"Found {tasksData.Count} tasks for today ({DateTime.Today:dd/MM/yyyy})"));
+        Console.WriteLine(string.Create(CultureInfo.InvariantCulture, $"Found {tasksData.Count} tasks for today ({DateTime.Today:dd.MM.yyyy})"));
         if (tasksData.Count == 0) return;
 
         var tasksByProject = tasksData.GroupBy(x => x.Project, StringComparer.OrdinalIgnoreCase).ToList();
