@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using BitrixReportGen.API.Bitrix;
@@ -43,26 +41,23 @@ internal static class Program
             });
         }
 
-        Console.WriteLine($"Found {tasksData.Count} tasks for today");
+        Console.WriteLine(string.Create(CultureInfo.InvariantCulture, $"Found {tasksData.Count} tasks for today ({DateTime.Today:dd/MM/yyyy})"));
+        if (tasksData.Count == 0) return;
 
         var tasksByProject = tasksData.GroupBy(x => x.Project, StringComparer.OrdinalIgnoreCase).ToList();
 
         var stringBuilder = new StringBuilder();
         foreach (var projectTasks in tasksByProject)
         {
-            stringBuilder.AppendLine($"### [{projectTasks.Key}] => {projectTasks.Sum(x => x.TimeSpent.Hours)}h {projectTasks.Sum(x => x.TimeSpent.Minutes)}m ###");
+            stringBuilder.AppendLine($"### [{projectTasks.Key}] => {projectTasks.Sum(x => x.TimeSpent.Hours)}h {projectTasks.Sum(x => x.TimeSpent.Minutes)}m {projectTasks.Sum(x => x.TimeSpent.Seconds)}s ###");
             foreach (var task in projectTasks)
                 stringBuilder.AppendLine($"- {task.TaskTitle} => {task.TimeSpent.Hours}h {task.TimeSpent.Minutes}m {task.TimeSpent.Seconds}s");
         }
 
-        Console.WriteLine("Tasks to report:");
-        foreach (var s in tasksData) Console.WriteLine(s);
-
         var strToClipboard = stringBuilder.ToString();
+        Console.WriteLine("Tasks to report:\n" + strToClipboard);
         var isCopied = await ClipboardManager.SetClipboard(strToClipboard);
 
         Console.WriteLine(isCopied ? "Successfully copied to clipboard! Use Ctrl+V to paste it." : "Failed to copy to clipboard! Most likely you are not on Windows.");
     }
-
-
 }
