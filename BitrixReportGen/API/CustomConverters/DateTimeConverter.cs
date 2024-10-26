@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace BitrixReportGen;
+namespace BitrixReportGen.API.CustomConverters;
 
 public class DateTimeConverter : JsonConverter<DateTime>
 {

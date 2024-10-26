@@ -1,4 +1,4 @@
-﻿namespace BitrixReportGen;
+namespace BitrixReportGen;
 
 public class TaskData
 {
