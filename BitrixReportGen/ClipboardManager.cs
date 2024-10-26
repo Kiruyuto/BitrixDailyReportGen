@@ -13,9 +13,10 @@ public static class ClipboardManager
         {
             StartInfo = new ProcessStartInfo
             {
-                RedirectStandardInput = true,
                 FileName = "clip",
-                UseShellExecute = false
+                RedirectStandardInput = true,
+                UseShellExecute = false,
+                CreateNoWindow = false
             }
         };
 

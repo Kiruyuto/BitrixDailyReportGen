@@ -44,15 +44,18 @@ internal static class Program
         Console.WriteLine(string.Create(CultureInfo.InvariantCulture, $"Found {tasksData.Count} tasks for today ({DateTime.Today:dd.MM.yyyy})"));
         if (tasksData.Count == 0) return;
 
-        var tasksByProject = tasksData.GroupBy(x => x.Project, StringComparer.OrdinalIgnoreCase).ToList();
+        var tasksByProject = tasksData.GroupBy(x => x.Project, StringComparer.OrdinalIgnoreCase);
 
         var stringBuilder = new StringBuilder();
+        stringBuilder.AppendLine(string.Create(CultureInfo.InvariantCulture, $"# Daily report for {DateTime.Today:dd.MM.yyyy}, created at {DateTime.Now:HH:mm:ss} #\n"));
         foreach (var projectTasks in tasksByProject)
         {
             stringBuilder.AppendLine($"### [{projectTasks.Key}] => {projectTasks.Sum(x => x.TimeSpent.Hours)}h {projectTasks.Sum(x => x.TimeSpent.Minutes)}m {projectTasks.Sum(x => x.TimeSpent.Seconds)}s ###");
             foreach (var task in projectTasks)
                 stringBuilder.AppendLine($"- {task.TaskTitle} => {task.TimeSpent.Hours}h {task.TimeSpent.Minutes}m {task.TimeSpent.Seconds}s");
         }
+
+        stringBuilder.AppendLine(string.Create(CultureInfo.InvariantCulture, $"\nTotal time spent today across all projects: [{tasksData.Sum(x => x.TimeSpent.Hours)}h {tasksData.Sum(x => x.TimeSpent.Minutes)}m {tasksData.Sum(x => x.TimeSpent.Seconds)}s]"));
 
         var strToClipboard = stringBuilder.ToString();
         Console.WriteLine("Tasks to report:\n" + strToClipboard);
