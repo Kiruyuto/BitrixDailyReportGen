@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.0.0...BitrixRaportGen-1.0.1) (2024-10-28)
+
+
+### 🐛 Bug Fixes
+
+* Group can be null, an array and object at the same time ([8daba0f](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/8daba0fc13f4a724c7cc7afdbfd60b160235ad80))
+
 ## 1.0.0 (2024-10-26)
 
 
