@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.0.1...BitrixRaportGen-1.1.0) (2024-10-28)
+
+
+### 🚀 Features & Enhancements
+
+* Add timezone converters ([7767a66](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/7767a6670d5685c2b3866cb2306d62ef6bfba479))
+
 ## [1.0.1](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.0.0...BitrixRaportGen-1.0.1) (2024-10-28)
 
 
