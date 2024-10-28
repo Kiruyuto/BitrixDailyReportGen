@@ -98,6 +98,7 @@ dotnet_diagnostic.MA0048.severity = none
 dotnet_diagnostic.MA0004.severity = none
 dotnet_diagnostic.MA0016.severity = none
 dotnet_diagnostic.MA0038.severity = none # Deprecated. Results in shitton of errors w/ primary constructors. DO NOT USE.
+dotnet_diagnostic.MA0051.severity = none
 
 # Roslynator
 roslynator_refactorings.enabled = true
