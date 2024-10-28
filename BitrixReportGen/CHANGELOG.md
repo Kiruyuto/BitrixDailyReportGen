@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.0...BitrixRaportGen-1.1.1) (2024-10-28)
+
+
+### 🐛 Bug Fixes
+
+* Combined minutes exceeding 60 ([832780d](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/832780d78c5f9ebdfbcf3eca24be5ea413070847))
+
 ## [1.1.0](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.0.1...BitrixRaportGen-1.1.0) (2024-10-28)
 
 
