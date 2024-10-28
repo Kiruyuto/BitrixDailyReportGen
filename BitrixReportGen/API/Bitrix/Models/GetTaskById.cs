@@ -1,3 +1,4 @@
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace BitrixReportGen.API.Bitrix.Models;
@@ -52,7 +53,25 @@ public class GetTaskById : DefaultResponse<GetTaskById.Result>
         [JsonPropertyName("timeEstimate")] public string? TimeEstimate { get; set; }
         [JsonPropertyName("timeSpentInLogs")] public string? TimeSpentInLogs { get; set; } // Returned as string, but represents a number
         [JsonPropertyName("groupId")] public string? GroupId { get; set; }
-        [JsonPropertyName("group")] public Group? Group { get; set; }
+        public Group? Group;
+
+        [JsonPropertyName("group")]
+        public object? Grp
+        {
+            set
+            {
+                if (GroupId != null && !string.IsNullOrWhiteSpace(GroupId) && !string.Equals(GroupId, "0", StringComparison.OrdinalIgnoreCase))
+                {
+                    var str = JsonSerializer.Serialize(value);
+                    Group = JsonSerializer.Deserialize<Group>(str);
+                }
+                else
+                {
+                    Group = null;
+                }
+            }
+        }
+
         [JsonPropertyName("creator")] public Creator Creator { get; set; } = default!;
         [JsonPropertyName("responsible")] public Responsible? Responsible { get; set; }
     }
