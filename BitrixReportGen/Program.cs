@@ -14,19 +14,26 @@ internal static class Program
 
         var taskList = await bitrixClient.GetTaskList();
 
+        var bitrixTimezone = TimeZoneInfo.FindSystemTimeZoneById("E. Europe Standard Time");
+        var polishTimezone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
+
         var tasksData = new HashSet<TaskData>();
         foreach (var task in taskList.TaskIds)
         {
             var taskHistory = await bitrixClient.GetTaskHistory(task.ToString()!);
             if (taskHistory.ResultProperty == default) throw new Exception($"[TaskId: {task}] Failed to get task history!");
-            var timeSpentTodayEvents = taskHistory.ResultProperty.TaskHistory.Where(x => string.Equals(x.Field, "TIME_SPENT_IN_LOGS", StringComparison.OrdinalIgnoreCase) && x.CreatedDate.Date == DateTime.Today.Date).ToList();
+            var timeSpentTodayEvents = taskHistory.ResultProperty.TaskHistory.Where(x => string.Equals(x.Field, "TIME_SPENT_IN_LOGS", StringComparison.OrdinalIgnoreCase)).ToList();
             if (timeSpentTodayEvents.Count == 0) continue;
 
             var total = 0;
 
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
             foreach (var @event in timeSpentTodayEvents)
+            {
+                var local = TimeZoneInfo.ConvertTime(@event.CreatedDate, bitrixTimezone, polishTimezone);
+                if (local.Date != DateTime.Today.Date) continue;
                 total += int.Parse(@event.Value.To!) - int.Parse(@event.Value.From!); // This type of field is always a number
+            }
 
             if (total == 0) continue;
 
