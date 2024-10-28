@@ -62,7 +62,8 @@ internal static class Program
                 stringBuilder.AppendLine($"- {task.TaskTitle} => {task.TimeSpent.Hours}h {task.TimeSpent.Minutes}m {task.TimeSpent.Seconds}s");
         }
 
-        stringBuilder.AppendLine(string.Create(CultureInfo.InvariantCulture, $"\nTotal time spent today across all projects: [{tasksData.Sum(x => x.TimeSpent.Hours)}h {tasksData.Sum(x => x.TimeSpent.Minutes)}m {tasksData.Sum(x => x.TimeSpent.Seconds)}s]"));
+        var totalSpent = new TimeSpan(tasksData.Sum(x => x.TimeSpent.Ticks));
+        stringBuilder.AppendLine(string.Create(CultureInfo.InvariantCulture, $"\nTotal time spent today across all projects: [{totalSpent.Hours}h {totalSpent.Minutes}m {totalSpent.Seconds}s]"));
 
         var strToClipboard = stringBuilder.ToString();
         Console.WriteLine("Tasks to report:\n" + strToClipboard);
