@@ -59,7 +59,7 @@ internal static class Program
         {
             stringBuilder.AppendLine($"### [{projectTasks.Key}] => {projectTasks.Sum(x => x.TimeSpent.Hours)}h {projectTasks.Sum(x => x.TimeSpent.Minutes)}m {projectTasks.Sum(x => x.TimeSpent.Seconds)}s ###");
             foreach (var task in projectTasks)
-                stringBuilder.AppendLine($"- {task.TaskTitle} => {task.TimeSpent.Hours}h {task.TimeSpent.Minutes}m {task.TimeSpent.Seconds}s");
+                stringBuilder.AppendLine($"- \"{task.TaskTitle}\": {task.TimeSpent.Hours}h {task.TimeSpent.Minutes}m {task.TimeSpent.Seconds}s");
         }
 
         var totalSpent = new TimeSpan(tasksData.Sum(x => x.TimeSpent.Ticks));
