@@ -9,7 +9,7 @@
     ```
    which in my case translates to:
     ```bash 
-    dotnet tool install --global --add-source ./artifacts/ BitrixReportGen
+    dotnet tool install --global --add-source ~/Desktop/Repos/ BitrixReportGen
    ```
 4. You can now run the tool from any directory by typing [**bitrixGen**](https://github.com/Kiruyuto/BitrixDailyReportGen/blob/master/BitrixReportGen/BitrixReportGen.csproj#L10) in the terminal.
     ```
