@@ -1,7 +1,7 @@
 # BitrixDailyReportGen
 
 ### Installation
-1. Grab the [latest release](https://github.com/Kiruyuto/BitrixDailyReportGen/releases/latest) from GH or [pack](https://github.com/Kiruyuto/BitrixDailyReportGen/blob/master/.github/workflows/release.yml#L47) the project yourself.
+1. Grab the [latest release](https://github.com/Kiruyuto/BitrixDailyReportGen/releases/latest) from GH or [pack](https://github.com/Kiruyuto/BitrixDailyReportGen/blob/master/.github/workflows/release.yml#L57) the project yourself.
 2. Unzip the archive to a folder of your choice.
 3. Run the command below in the terminal to install the tool globally.
     ```bash 
