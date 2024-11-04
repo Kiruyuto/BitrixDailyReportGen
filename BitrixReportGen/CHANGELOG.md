@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.2](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.1...BitrixRaportGen-1.1.2) (2024-11-04)
+
+
+### 🐛 Bug Fixes
+
+* Use timespan per project ([a7ee255](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/a7ee2557e89cef1a5463e034f4d54551626e56ca))
+
+
+### 🏡 Chore
+
+* **deps:** Update dependency Meziantou.Analyzer to 2.0.177 ([#11](https://github.com/Kiruyuto/BitrixDailyReportGen/issues/11)) ([204a510](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/204a510f390dbc18e56d0ad2b30c23f446db1501))
+
+
+### 🎨 Style
+
+* Quote task title ([cbd79ff](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/cbd79ff32a0c805561f15c8e9605f4f25bb81459))
+
 ## [1.1.1](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.0...BitrixRaportGen-1.1.1) (2024-10-28)
 
 
