@@ -57,7 +57,8 @@ internal static class Program
         stringBuilder.AppendLine(string.Create(CultureInfo.InvariantCulture, $"# Daily report for {DateTime.Today:dd.MM.yyyy}, created at {DateTime.Now:HH:mm:ss} #\n"));
         foreach (var projectTasks in tasksByProject)
         {
-            stringBuilder.AppendLine($"### [{projectTasks.Key}] => {projectTasks.Sum(x => x.TimeSpent.Hours)}h {projectTasks.Sum(x => x.TimeSpent.Minutes)}m {projectTasks.Sum(x => x.TimeSpent.Seconds)}s ###");
+            var projectTimeSpent = new TimeSpan(projectTasks.Sum(x => x.TimeSpent.Ticks));
+            stringBuilder.AppendLine($"### [{projectTasks.Key}] => {projectTimeSpent.Hours}h {projectTimeSpent.Minutes}m {projectTimeSpent.Seconds}s ###");
             foreach (var task in projectTasks)
                 stringBuilder.AppendLine($"- \"{task.TaskTitle}\": {task.TimeSpent.Hours}h {task.TimeSpent.Minutes}m {task.TimeSpent.Seconds}s");
         }
