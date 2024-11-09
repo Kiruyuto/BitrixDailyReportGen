@@ -50,18 +50,18 @@ Total time spent today across all projects: [0h 1m 1s]
 ### User Id
 1. Go to your B24 domain profile. You can find your user ID in the URL
   `https://[unique_domain_id].bitrix24.[domain]/company/personal/user/[user_id]/`
-    <details>
-      <summary>Open to see image guide</summary>
-    
-      ![img.png](./.github/imgs/user-id.png)
-      
-      > [!IMPORTANT]  
-      > You must provide your own user ID. Using someone else's ID will result in unauthorized API calls.
-    
-    </details>
+<details>
+  <summary>Open to see image guide</summary>
+
+  ![iser-id.png](./.github/imgs/user-id.png)
+
+</details>
+
+  > [!IMPORTANT]  
+  > You must provide your own user ID. Using someone else's ID will result in unauthorized API calls.  
 
 ### API Key
-1. Go to (Found it navbar) `Developer resources` -> `Common use cases` -> `Other` ->  `Inbound webhook`
+1. Go to (Found it navbar) `Developer resources` => `Common use cases` => `Other` =>  `Inbound webhook`
     <details>
       <summary>Open to see image guide</summary>
 
@@ -77,14 +77,14 @@ Total time spent today across all projects: [0h 1m 1s]
 
       ![permissions.png](./.github/imgs/permissions.png)  
 
-   > [!WARNING]  
-   > According to API specs, you should only need permissions as shown in the image above.  
-   > However, there seems to be a bug where you need more permissions to get the webhook to work.  
-   > I wasn't able to determine which permissions are necessary, so I assigned all of them.  
-   > ¯\\\_(ツ)\_/¯  
-   > ![all-permissions.png](./.github/imgs/all-permissions.png)  
-
     </details>
+
+  > [!WARNING]  
+  > According to API specs, you should only need few permissions as shown in the image above.  
+  > However, there seems to be a bug where you need more permissions to get the webhook to work.  
+  > I wasn't able to determine which permissions are necessary, so I assigned all of them.  
+  > [See there](./.github/imgs/all-permissions.png).  
+  > ¯\\\_(ツ)\_/¯  
 
 3. Click `Generate new` and then copy the key
     <details>
