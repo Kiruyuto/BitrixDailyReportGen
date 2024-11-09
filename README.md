@@ -53,10 +53,10 @@ Total time spent today across all projects: [0h 1m 1s]
     <details>
       <summary>Open to see image guide</summary>
     
-      ![img.png](./.github/imgs/user-id.png)
+        ![img.png](./.github/imgs/user-id.png)
       
-      > [!IMPORTANT]  
-      > You must provide your own user ID. Using someone else's ID will result in unauthorized API calls.
+    > [!IMPORTANT]  
+    > You must provide your own user ID. Using someone else's ID will result in unauthorized API calls.
     
     </details>
 
@@ -77,12 +77,12 @@ Total time spent today across all projects: [0h 1m 1s]
 
       ![permissions.png](./.github/imgs/permissions.png)  
 
-   > [!WARNING]  
-   > According to API specs, you should only need permissions as shown in the image above.  
-   > However, there seems to be a bug where you need more permissions to get the webhook to work.  
-   > I wasn't able to determine which permissions are necessary, so I assigned all of them.  
-   > ¯\\\_(ツ)\_/¯  
-   > ![all-permissions.png](./.github/imgs/all-permissions.png)  
+    > [!WARNING]  
+    > According to API specs, you should only need permissions as shown in the image above.  
+    > However, there seems to be a bug where you need more permissions to get the webhook to work.  
+    > I wasn't able to determine which permissions are necessary, so I assigned all of them.  
+    > ¯\\\_(ツ)\_/¯  
+    > ![all-permissions.png](./.github/imgs/all-permissions.png)  
 
     </details>
 
