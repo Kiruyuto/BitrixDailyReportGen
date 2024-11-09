@@ -4,10 +4,8 @@ using RestSharp;
 
 namespace BitrixReportGen.API.Bitrix;
 
-public class SimplifiedBitrixClient(string userId, string apiKey) : BaseClient(new RestClient(baseUrl: string.Create(CultureInfo.InvariantCulture, $"{BaseUrl}/{userId}/{apiKey}")))
+public class SimplifiedBitrixClient(string bitrixDomain, string userId, string apiKey) : BaseClient(new RestClient(baseUrl: string.Create(CultureInfo.InvariantCulture, $"https://{bitrixDomain}/rest/{userId}/{apiKey}")))
 {
-    private const string BaseUrl = "https://b24-no2e6d.bitrix24.pl/rest";
-
     private const string GetTaskListEndpoint = "task.planner.getlist.json";
     private const string GetTaskHistoryEndpoint = "tasks.task.history.list.json";
     private const string GetTaskByIdEndpoint = "tasks.task.get.json";
