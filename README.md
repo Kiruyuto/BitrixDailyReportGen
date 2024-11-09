@@ -11,10 +11,10 @@
     ```bash 
     dotnet tool install --global --add-source ~/Desktop/Repos/ BitrixReportGen
    ```
-4. Set the ``, `BITRIX_USER_ID` and `BITRIX_API_KEY` environment variables.
+4. Set the `BITRIX_DOMAIN`, `BITRIX_USER_ID` and `BITRIX_API_KEY` environment variables.
 5. You can now run the tool from any directory by typing [**bitrixGen**](https://github.com/Kiruyuto/BitrixDailyReportGen/blob/master/BitrixReportGen/BitrixReportGen.csproj#L10) in the terminal.
-    ```
-    bitrixGen
+    ```bash
+    bitrixGen # Or bitrixGen.exe
     ```
    
 <details>
@@ -85,4 +85,11 @@ Total time spent today across all projects: [0h 1m 1s]
    > ![img_6.png](img_6.png)
     
     </details>
-   
+
+3. Click `Generate new` and then copy the key
+    <details>
+      <summary>Open to see image guide</summary>
+    
+      ![api-key.png](./.github/readme_imgs/api-key.png)
+    
+    </details>
