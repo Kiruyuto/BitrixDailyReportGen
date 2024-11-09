@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.2...BitrixRaportGen-1.1.3) (2024-11-09)
+
+
+### 🏡 Chore
+
+* Update readme; Use custom domain ([#12](https://github.com/Kiruyuto/BitrixDailyReportGen/issues/12)) ([b2ef222](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/b2ef22211a21d05dc7e3eb9f204da8c12f9cc20e))
+
 ## [1.1.2](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.1...BitrixRaportGen-1.1.2) (2024-11-04)
 
 
