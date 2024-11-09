@@ -42,7 +42,7 @@ Total time spent today across all projects: [0h 1m 1s]
     <details>
       <summary>Open to see image guide</summary>
     
-      ![img_2.png](img_2.png)
+      ![domain.png](./.github/readme_imgs/domain.png)
       
     </details>
 
@@ -64,32 +64,32 @@ Total time spent today across all projects: [0h 1m 1s]
 1. Go to (Found it navbar) `Developer resources` -> `Common use cases` -> `Other` ->  `Inbound webhook`
     <details>
       <summary>Open to see image guide</summary>
-    
-      ![img_1.png](img_1.png)
-      ![img_3.png](img_3.png)
-      ![img_4.png](img_4.png)
-    
+
+      ![developer-resources.png](./.github/readme_imgs/developer-resources.png)  
+      ![common-use-casees-other.png](./.github/readme_imgs/common-use-cases-other.png)  
+      ![inbound-webhook.png](./.github/readme_imgs/inbound-webhook.png)  
+
     </details>
 
 2. Assign permissions to the webhook
     <details>
       <summary>Open to see image guide</summary>
-    
-      ![img_5.png](img_5.png)
+
+      ![permissions.png](./.github/readme_imgs/permissions.png)  
 
    > [!WARNING]  
    > According to API specs, you should only need permissions as shown in the image above.  
    > However, there seems to be a bug where you need more permissions to get the webhook to work.  
    > I wasn't able to determine which permissions are necessary, so I assigned all of them.  
    > ¯\\\_(ツ)\_/¯  
-   > ![img_6.png](img_6.png)
-    
+   > ![all-permissions.png](./.github/readme_imgs/all-permissions.png)  
+
     </details>
 
 3. Click `Generate new` and then copy the key
     <details>
       <summary>Open to see image guide</summary>
-    
-      ![api-key.png](./.github/readme_imgs/api-key.png)
-    
+
+      ![api-key.png](./.github/readme_imgs/api-key.png)  
+
     </details>
