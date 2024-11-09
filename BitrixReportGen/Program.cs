@@ -8,9 +8,10 @@ internal static class Program
 {
     private static async Task Main()
     {
+        var bitrixDomain = Environment.GetEnvironmentVariable("BITRIX_DOMAIN") ?? throw new Exception("Missing 'BITRIX_DOMAIN' environment variable!");
         var userId = Environment.GetEnvironmentVariable("BITRIX_USER_ID") ?? throw new Exception("Missing 'BITRIX_USER_ID' environment variable!");
         var apiKey = Environment.GetEnvironmentVariable("BITRIX_API_KEY") ?? throw new Exception("Missing 'BITRIX_API_KEY' environment variable!");
-        var bitrixClient = new SimplifiedBitrixClient(userId, apiKey);
+        var bitrixClient = new SimplifiedBitrixClient(bitrixDomain, userId, apiKey);
 
         var taskList = await bitrixClient.GetTaskList();
 
