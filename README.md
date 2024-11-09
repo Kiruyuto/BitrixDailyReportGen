@@ -53,9 +53,9 @@ Total time spent today across all projects: [0h 1m 1s]
     <details>
       <summary>Open to see image guide</summary>
     
-      ![img.png](./.github/readme_imgs/userId.png)
+      ![img.png](./.github/readme_imgs/user-id.png)
       
-      > [!WARNING]  
+      > [!IMPORTANT]  
       > You must provide your own user ID. Using someone else's ID will result in unauthorized API calls.
     
     </details>
