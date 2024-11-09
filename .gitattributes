@@ -3,3 +3,5 @@
 *.sln text eol=lf
 
 *.cs diff=csharp eol=lf
+
+*.png binary
