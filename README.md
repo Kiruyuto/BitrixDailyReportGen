@@ -80,7 +80,7 @@ Total time spent today across all projects: [0h 1m 1s]
     </details>
 
   > [!WARNING]  
-  > According to API specs, you should only need permissions as shown in the image above.  
+  > According to API specs, you should only need few permissions as shown in the image above.  
   > However, there seems to be a bug where you need more permissions to get the webhook to work.  
   > I wasn't able to determine which permissions are necessary, so I assigned all of them.  
   > [See there](./.github/imgs/all-permissions.png).  
