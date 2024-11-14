@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.3...BitrixRaportGen-1.1.4) (2024-11-14)
+
+
+### 🏡 Chore
+
+* **deps:** Update all non-major dependencies ([#15](https://github.com/Kiruyuto/BitrixDailyReportGen/issues/15)) ([582d91f](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/582d91faa158725fed61eb4773c05c98b243fbea))
+
 ## [1.1.3](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.2...BitrixRaportGen-1.1.3) (2024-11-09)
 
 
