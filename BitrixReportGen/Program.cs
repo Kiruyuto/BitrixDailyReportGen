@@ -31,7 +31,7 @@ internal static class Program
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
             foreach (var @event in timeSpentTodayEvents)
             {
-                var local = TimeZoneInfo.ConvertTime(@event.CreatedDate, bitrixTimezone, polishTimezone);
+                var local = TimeZoneInfo.ConvertTime(new DateTime(@event.CreatedDate.Ticks, DateTimeKind.Unspecified), bitrixTimezone, polishTimezone);
                 if (local.Date != DateTime.Today.Date) continue;
                 total += int.Parse(@event.Value.To!) - int.Parse(@event.Value.From!); // This type of field is always a number
             }

@@ -14,21 +14,22 @@ public class GetTaskHistory : DefaultResponse<GetTaskHistory.Result>
 
     public class History
     {
-        [JsonPropertyName("id")] public string Id { get; set; } = default!;
+        // [JsonPropertyName("id")] public string Id { get; set; } = default!;
         [JsonPropertyName("createdDate")] public DateTime CreatedDate { get; set; }
         [JsonPropertyName("field")] public string Field { get; set; } = default!;
+
         [JsonPropertyName("value")] public Value Value { get; set; } = default!;
-        [JsonPropertyName("user")] public User? User { get; set; }
+        // [JsonPropertyName("user")] public User? User { get; set; }
     }
 
-    public class User
-    {
-        [JsonPropertyName("id")] public string Id { get; set; } = default!;
-        [JsonPropertyName("name")] public string? Name { get; set; }
-        [JsonPropertyName("lastName")] public string? LastName { get; set; }
-        [JsonPropertyName("secondName")] public string? SecondName { get; set; }
-        [JsonPropertyName("login")] public string? Login { get; set; }
-    }
+    // public class User
+    // {
+    //     [JsonPropertyName("id")] public string Id { get; set; } = default!;
+    //     [JsonPropertyName("name")] public string? Name { get; set; }
+    //     [JsonPropertyName("lastName")] public string? LastName { get; set; }
+    //     [JsonPropertyName("secondName")] public string? SecondName { get; set; }
+    //     [JsonPropertyName("login")] public string? Login { get; set; }
+    // }
 
     public class Value
     {
