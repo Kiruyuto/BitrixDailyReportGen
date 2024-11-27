@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.3...BitrixRaportGen-2.0.0) (2024-11-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Update dependency dotnet-sdk to v9 ([#18](https://github.com/Kiruyuto/BitrixDailyReportGen/issues/18))
+
+### 🐛 Bug Fixes
+
+* Remove unused properties to avoid breaking changes from Bitrix API ([b1999c5](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/b1999c5a56465cc8762154b261df72d990ac348e))
+
+
+### 🏡 Chore
+
+* **deps:** Update all non-major dependencies ([#15](https://github.com/Kiruyuto/BitrixDailyReportGen/issues/15)) ([582d91f](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/582d91faa158725fed61eb4773c05c98b243fbea))
+* **deps:** Update dependency dotnet-sdk to v9 ([#18](https://github.com/Kiruyuto/BitrixDailyReportGen/issues/18)) ([3d6feef](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/3d6feef1a78c3d0c3172fa90aa3ee03d51739efa))
+* **deps:** Update dependency Meziantou.Analyzer to 2.0.181 ([#17](https://github.com/Kiruyuto/BitrixDailyReportGen/issues/17)) ([f7f7823](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/f7f7823082afa39d9aed1c8c8ab17b73597f2042))
+
 ## [1.1.3](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.2...BitrixRaportGen-1.1.3) (2024-11-09)
 
 
