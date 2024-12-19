@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-2.0.0...BitrixRaportGen-2.0.1) (2024-12-19)
+
+
+### 🏡 Chore
+
+* **deps:** Update all non-major dependencies to 4.12.10 ([#22](https://github.com/Kiruyuto/BitrixDailyReportGen/issues/22)) ([d97815d](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/d97815d4cfcd66091051cedf70e2ba7d8c27c5bb))
+* **deps:** Update dependency Meziantou.Analyzer to 2.0.182 ([#19](https://github.com/Kiruyuto/BitrixDailyReportGen/issues/19)) ([c8b402b](https://github.com/Kiruyuto/BitrixDailyReportGen/commit/c8b402b775f400a3bf7b0568e5ed567c2bd8a008))
+
 ## [2.0.0](https://github.com/Kiruyuto/BitrixDailyReportGen/compare/BitrixRaportGen-1.1.3...BitrixRaportGen-2.0.0) (2024-11-27)
 
 
